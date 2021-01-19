@@ -24,4 +24,12 @@ function next() {
   }, 1000);
 }
 
+function rightPressed(e) {
+  var event = e || window.event;
+  if (event.keyCode == "39" && !control.hasAttribute("disabled")) {
+    next();
+  }
+}
+
 control.addEventListener("click", next);
+document.addEventListener("keydown", rightPressed);

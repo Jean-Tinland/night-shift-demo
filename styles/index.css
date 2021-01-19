@@ -97,9 +97,23 @@ body {
   height: 0;
   padding-top: 67.7722772%;
   opacity: 0;
-  transform: translateY(-50%) scale(0.8);
+  transform: translateY(-50%) scale(0.7);
   z-index: -1;
 }
+.demo__image-container::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 3px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
 .demo__image-container--current {
   opacity: 1;
   transform: translateY(-50%);
@@ -110,7 +124,7 @@ body {
 }
 @keyframes animate-in {
   0% {
-    transform: translateY(-50%) scale(0.8);
+    transform: translateY(-50%) scale(0.7);
   }
   50% {
     opacity: 1;
@@ -132,7 +146,7 @@ body {
     transform: translateY(-50%);
   }
   50% {
-    transform: translate(-100%, -50%) scale(0.8);
+    transform: translate(-90%, -50%) scale(0.8);
     z-index: 0;
   }
   100% {
