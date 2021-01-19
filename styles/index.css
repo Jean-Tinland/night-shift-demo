@@ -1,0 +1,149 @@
+@import "./reset.css";
+
+html,
+body {
+  background-color: #39465e;
+}
+.demo {
+  min-height: 100vh;
+  color: #fff;
+  font-weight: 300;
+  font-family: Inter, "sans-serif";
+}
+.demo__inner {
+  width: 100%;
+  max-width: 1400px;
+  min-height: inherit;
+  display: flex;
+  margin: 0 auto;
+}
+.demo__left {
+  flex: 0 0 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+}
+@media (min-width: 1000px) {
+  .demo__left {
+    flex: 0 0 35%;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+.demo__logo {
+  width: 100px;
+  margin-bottom: 10px;
+}
+.demo__title {
+  margin-bottom: 10px;
+  color: #ffd484;
+  font-size: 34px;
+  font-weight: 900;
+}
+.demo__tagline {
+  font-size: 18px;
+  font-weight: inherit;
+}
+.demo__data {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.demo__link {
+  margin-right: 8px;
+  color: #ffd484;
+}
+.demo__link:last-of-type {
+  margin-right: 0;
+}
+.demo__control {
+  display: none;
+}
+@media (min-width: 1000px) {
+  .demo__control {
+    display: block;
+    margin-left: 16px;
+    padding: 5px 10px;
+    color: #39465e;
+    background-color: #ffd484;
+    border-radius: 2px;
+  }
+}
+.demo__control:disabled {
+  opacity: 0.5;
+}
+.demo__right {
+  display: none;
+  flex: 0 0 65%;
+  justify-content: center;
+}
+@media (min-width: 1000px) {
+  .demo__right {
+    display: flex;
+  }
+}
+.demo__images {
+  position: relative;
+  width: 100%;
+}
+.demo__image-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  padding-top: 67.7722772%;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.8);
+  z-index: -1;
+}
+.demo__image-container--current {
+  opacity: 1;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+.demo__image-container--animate-in {
+  animation: animate-in 1000ms ease-in-out;
+}
+@keyframes animate-in {
+  0% {
+    transform: translateY(-50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+    z-index: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+}
+.demo__image-container--animate-out {
+  animation: animate-out 1000ms ease-in-out;
+}
+
+@keyframes animate-out {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translate(-100%, -50%) scale(0.8);
+    z-index: 0;
+  }
+  100% {
+    transform: translateY(-50%) scale(0.6);
+    z-index: 0;
+  }
+}
+.demo__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
